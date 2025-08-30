@@ -12,7 +12,7 @@ var generator = new Analyzer(@"Rules\uz.txt");
 var word = "олма";
 var wordForms = generator.GenerateWordForms("ot", word); // "ot" - qoida nomi
 ```
-```markdown
+
 | Natija       | 
 |--------------|
 | олма         |
