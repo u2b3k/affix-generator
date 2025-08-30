@@ -30,3 +30,6 @@ var wordForms = generator.GenerateWordForms("ot", word); // "ot" - qoida nomi
 ```c#
 var list = generator.AnalyzeWordByRules(word);
 ```
+
+### Natija
+```олма лар:КЎПЛИК:ЛАР имиз:ЭГАЛИК:1ШК нинг:КЕЛИШИК:ҚАРАТҚИЧ```
