@@ -13,7 +13,7 @@ var word = "олма";
 var wordForms = generator.GenerateWordForms("ot", word); // "ot" - qoida nomi
 ```
 **Natija**
-```
+
 | So'zlar      |
 |--------------|
 | олма         |
