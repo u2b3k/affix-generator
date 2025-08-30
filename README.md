@@ -26,7 +26,7 @@ var wordForms = generator.GenerateWordForms("ot", word); // "ot" - qoida nomi
 | олмаданчи    |
 | олманинг     |
 | ...          |
-```
+
 **Berilgan so'zni qo'shimchalarga ajratish:**
 ```c#
 var list = generator.AnalyzeWordByRules(word);
