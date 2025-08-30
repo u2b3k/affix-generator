@@ -37,3 +37,19 @@ var list = generator.AnalyzeWordByRules(word);
 **Natija**
 
 ```олма лар:КЎПЛИК:ЛАР имиз:ЭГАЛИК:1ШК нинг:КЕЛИШИК:ҚАРАТҚИЧ```
+
+## Qoidalar faylining shakli
+
+Qoidalarni ko'rsatuvchi fayl ikkita: SUFFIX va RULE kalit so'zlari orqali beriladi.
+Qo'shimchalar to'plami SUFFIX kalit so'z orqali ko'rsatiladi:
+```
+SUFFIX <suffiks_to'plami_nomi>:<ma'lumot> {
+  <qo'shimcha>:<ma'lumot> <shart_va_amal>
+}
+```
+Qoidalar to'plami esa RULE kalit so'z orqali ko'rsatiladi:
+```
+RULE <qoida_to'plami_nomi>:<ma'lumot> {
+  <suffikslar_ketma_ketligi>
+}
+```
