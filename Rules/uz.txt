@@ -1,0 +1,65 @@
+﻿# Egalik qo'shimchalari
+SUFFIX egalik:"ЭГАЛИК" { 
+    ғим:"1ШБ" WHEN ENDSWITH /қ/ CUT 1, 
+    гим:"1ШБ" WHEN ENDSWITH /к/ CUT 1, 
+    йим:"1ШБ" WHEN ENDSWITH /[еоёуўюэ]/, 
+    м:"1ШБ" WHEN ENDSWITH /[аия]/, 
+    им:"1ШБ" WHEN ENDSWITH /[^аияеоёуўюэқк]/, 
+
+    ғимиз:"1ШК" WHEN ENDSWITH /қ/ CUT 1, 
+    гимиз:"1ШК" WHEN ENDSWITH /к/ CUT 1, 
+    йимиз:"1ШК" WHEN ENDSWITH /[еоёуўюэ]/, 
+    миз:"1ШК" WHEN ENDSWITH /[аия]/,
+    имиз:"1ШК" WHEN ENDSWITH /[^аияеоёуўюэқк]/, 
+    
+    ғинг:"2ШБ" WHEN ENDSWITH /қ/ CUT 1,     
+    гинг:"2ШБ" WHEN ENDSWITH /к/ CUT 1, 
+    йинг:"2ШБ" WHEN ENDSWITH /[еоёуўюэ]/, 
+    нг:"2ШБ" WHEN ENDSWITH /[аия]/, 
+    инг:"2ШБ" WHEN ENDSWITH /[^аияеоёуўюэқк]/, 
+
+    ғингиз:"2ШК" WHEN ENDSWITH /қ/ CUT 1, 
+    гингиз:"2ШК" WHEN ENDSWITH /к/ CUT 1, 
+    йингиз:"2ШК" WHEN ENDSWITH /[еоёуўюэ]/, 
+    нгиз:"2ШК" WHEN ENDSWITH /[аия]/, 
+    ингиз:"2ШК" WHEN ENDSWITH /[^аияеоёуўюэқк]/, 
+
+    ғи:"3ШБ" WHEN ENDSWITH /қ/ CUT 1, 
+    ги:"3ШБ" WHEN ENDSWITH /к/ CUT 1,
+    си:"3ШБ" WHEN ENDSWITH /[еоёуўюэ]/, 
+    си:"3ШБ" WHEN ENDSWITH /[аия]/, 
+    и:"3ШБ" WHEN ENDSWITH /[^аияеоёуўюэқк]/, 
+}
+
+SUFFIX tasdiq:"ТАСДИҚЛАШ" {
+    ман: "A",
+    миз: "A",
+    сан: "A",
+    сиз: "A"
+}
+
+# Ko'plik qo'shimchasi
+SUFFIX kuplik:"КЎПЛИК" { лар:"ЛАР" }
+
+# Kelishiklar
+SUFFIX kelishik:"КЕЛИШИК" {
+    дан:"ЧИҚИШ",
+    нинг:"ҚАРАТҚИЧ",
+    да:"ЎРИН-ПАЙТ",
+    қа:"ЖЎНАЛИШ" WHEN ENDSWITH /[қғ]/ REPLACE "қ",
+    ка:"ЖЎНАЛИШ" WHEN ENDSWITH /[к]/,
+    га:"ЖЎНАЛИШ" WHEN ENDSWITH /[^қғк]/,
+    ни:"ТУШУМ"
+}
+
+# Savol yasovchi qo'shimchalar
+SUFFIX savol:"САВОЛ" {
+    ми:"МИ?",
+    масми: "ИНК:МИ?",
+    чи:"ЧИ?"
+}
+
+# OT so'z turkumi uchun qoidalar
+RULE ot:"ОТ" {
+    [@kuplik] + [@egalik] + [@kelishik] + [@savol]
+}

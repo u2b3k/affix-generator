@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AffixGenerator", "AffixGenerator.csproj", "{A547F8E7-232A-4BFC-80F0-FFCC15EF3A00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A547F8E7-232A-4BFC-80F0-FFCC15EF3A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A547F8E7-232A-4BFC-80F0-FFCC15EF3A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A547F8E7-232A-4BFC-80F0-FFCC15EF3A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A547F8E7-232A-4BFC-80F0-FFCC15EF3A00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C02D177-8D38-4CDB-B01B-80018F23BC2A}
+	EndGlobalSection
+EndGlobal
