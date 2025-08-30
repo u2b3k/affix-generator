@@ -12,6 +12,20 @@ var generator = new Analyzer(@"Rules\uz.txt");
 var word = "олма";
 var wordForms = generator.GenerateWordForms("ot", word); // "ot" - qoida nomi
 ```
+```markdown
+| Natija       | 
+|--------------|
+| олма         |
+| олмами       |
+| олмамасми    |
+| олмачи       |
+| олмадан      |
+| олмаданми    |
+| олмаданмасми |
+| олмаданчи    |
+| олманинг     |
+| ...          |
+
 **Berilgan so'zni qo'shimchalarga ajratish:**
 ```c#
 var list = generator.AnalyzeWordByRules(word);
