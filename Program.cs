@@ -14,18 +14,11 @@ namespace AffixGenerator
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            string grammarText = File.ReadAllText(@"Rules\uz.txt", Encoding.UTF8);
+            
             try
             {
-                var lexer = new Lexer(grammarText);
 
-                var tokens = lexer.Tokenize();
-
-                var parser = new Parser(tokens);
-
-                var grammar = parser.Parse();
-
-                var generator = new Analyzer(grammar);
+                var generator = new Analyzer(@"Rules\uz.txt");
 
                 var word = "олма";
 

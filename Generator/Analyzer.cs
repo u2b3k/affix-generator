@@ -31,9 +31,17 @@ namespace AffixGenerator.Generator
     {
         private readonly SuffixGrammar _grammar;
 
-        public Analyzer(SuffixGrammar grammar)
+        public Analyzer(string grammarFile)
         {
-            _grammar = grammar ?? throw new ArgumentNullException(nameof(grammar));
+            string grammarText = File.ReadAllText(grammarFile, Encoding.UTF8);
+
+            var lexer = new Lexer(grammarText);
+
+            var tokens = lexer.Tokenize();
+
+            var parser = new Parser(tokens);
+
+            _grammar = parser.Parse() ?? throw new ArgumentNullException(nameof(_grammar));
         }
 
         public WordAnalysis AnalyzeWord(string word)
