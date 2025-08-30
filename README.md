@@ -53,3 +53,16 @@ RULE <qoida_to'plami_nomi>:<ma'lumot> {
   <suffikslar_ketma_ketligi>
 }
 ```
+
+O'zbek tilida so'zga ba'zi qo'shimchalar qo'shilganda o'zidan oldingi bir yoki bir nechta harf o'zgarishga uchrashi mumkinligidan, SUFFIX orqali qo'shimchalar to'plamini kiritayotganda shartli qo'shishdan foydalanish mumkin.
+Masalan: "Mushuk"+"gim" (egalik qo'shimchasi) => "Mushugim" misolida, "k" harfi "g" ga aylanadi. Yoki turli harf bilan tugovchi so'zlarda qo'shimchalarning o'zi ham turlicha harf o'zgarishiga uchraydi. Buni SUFFIX orqali qo'shimchalar to'plamini berayotganda shartli ifodadan foydalanib kiritish mumkin:
+```
+SUFFIX egalik:"ЭГАЛИК" { 
+    ғим:"1ШБ" WHEN ENDSWITH /қ/ CUT 1, 
+    гим:"1ШБ" WHEN ENDSWITH /к/ CUT 1, 
+    йим:"1ШБ" WHEN ENDSWITH /[еоёуўюэ]/, 
+    м:"1ШБ" WHEN ENDSWITH /[аия]/, 
+    им:"1ШБ" WHEN ENDSWITH /[^аияеоёуўюэқк]/
+}
+```
+Shart qo'shimchadan keyin WHEN kalit so'zi orqali berilishi mumkin va ENDSWITH, ISVOWEL, ISCONSONANT funksiyalari yordamida so'zning oxirgi bir yoki bir nechta harflari shartga mosliligini tekshirish mumkin va undan so'ng REPLACE va CUT kalit so'zlar orqali harflarni boshqa harflarga almashtirish yoki tashlab yuborishni mumkin.
