@@ -607,5 +607,10 @@ namespace AffixGenerator.Generator
 
             return word;
         }
+
+        public HunspellConverter ToHunspellConverter()
+        {
+            return new HunspellConverter(_grammar);
+        }
     }
 }
