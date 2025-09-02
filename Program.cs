@@ -50,6 +50,7 @@ namespace AffixGenerator
                     Console.WriteLine();
                 }
 
+                ConvertGrammarToHunspell(generator, @"Rules\uz.aff", @"Rules\uz.dic");
 
             }
             catch (Exception ex)
@@ -59,5 +60,27 @@ namespace AffixGenerator
 
             Console.ReadKey();
         }
+
+        public static void ConvertGrammarToHunspell(Analyzer analyzer, string outputAffFile, string outputDicFile)
+        {
+            try
+            {
+                var converter = analyzer.ToHunspellConverter();
+
+                converter.SaveAffFile(outputAffFile);
+
+                Console.WriteLine($"AFF fayl yaratildi: {outputAffFile}");
+
+                foreach (var mapping in converter.GetFlagMapping())
+                {
+                    Console.WriteLine($"{mapping.Key} -> {mapping.Value}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Xatolik: {ex.Message}");
+            }
+        }
+
     }
 }
